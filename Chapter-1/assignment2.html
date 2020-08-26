@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+
+<div id="exercise">
+  <div>
+    <button v-on:click="displayAlert">Show Alert</button>
+  </div>
+  <div>
+    <input type="text" v-on:keydown="key = $event.target.value">
+      <p>{{ key }}</p>
+  </div>
+  <div>
+    <input type="text" v-on:keydown.enter="key = $event.target.value">
+      <p>{{ key }}</p>
+  </div>
+</div>
+
+<script>
+
+  new Vue ({
+  el: '#exercise',
+  data: {
+    key: ''
+    
+  }, 
+  methods:{
+    displayAlert: function(event){
+      return alert('Alert!')
+    }
+    
+  }
+})  
+
+</script>

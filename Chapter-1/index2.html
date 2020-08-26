@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+
+<div id="app">
+<!--<input type="text" v-on:input="changeTitle">-->
+  <h1 v-once>
+    {{ title }}
+  </h1>
+  <p>{{ sayHello() }} - <a v-bind:href="link">My website</a></p>
+  <p v-html="finishedLink">
+  </p>
+  
+  <button v-on:click="increase(2, $event)">Click me!</button>
+  <button v-on:click="counter++">Click me now!</button>
+	<p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10'}}</p>
+  <p v-on:mousemove="updateCoordinates">Coordinates: {{ x_coordinate }} / {{ y_coordinate }}
+  - <span v-on:mousemove.stop="">DEAD SPOT</span>
+  </p>
+  <input type="text" v-on:keyup.enter.space="alertMe">
+</div>
+	
+<script>
+new Vue ({
+	el: '#app', 
+	data: {
+  	title: 'Hey there!',
+    link: 'https://www.abautista.xyz',
+    finishedLink:'<a href="https://www.abautista.xyz">My website</a>',
+    counter: 0,
+    x_coordinate: 0,
+    y_coordinate: 0
+  },
+  methods: {
+  sayHello: function(){
+    	return this.title;
+    },
+  increase: function(step, event){
+	    this.counter+=step;
+  },
+  updateCoordinates: function(event){
+  	  this.x_coordinate = event.clientX;
+      this.y_coordinate = event.clientY;
+  },
+  alertMe: function(){
+  	alert('Alert!');
+  }
+ }
+});
+</script>
+
+  
+  </body>
+</html>

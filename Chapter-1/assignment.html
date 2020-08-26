@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+
+<div id="exercise">
+  <p>VueJS is the best front end framework - {{myname}} is {{age}} years old</p>
+  <p>
+  {{multipliedAge}}
+  </p>
+    {{generateRandom()}}
+   <div>
+     <img style="width: 100px; height: 100px" v-bind:src="imageLink">
+  </div>
+  <div>
+    <input type="text" v-bind:value="myname">
+  </div>
+</div>
+
+<script>
+
+  new Vue ({
+  el: '#exercise',
+  data: {
+    myname: 'Alejandro B. Ramos',
+    age: 30,
+    multipliedAge:30*3,
+    imageLink: 'https://offzone.moscow/upload/iblock/71f/71f986f87f1181de574b2b51326428c3.jpg'
+  }, 
+  methods:{
+    generateRandom: function(event){
+      return Math.random()
+    },
+    displayMyName: function(event){
+      return this.myname;
+    }
+  }
+})  
+
+</script>

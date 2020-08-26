@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+
+<div id="app">
+	<input type="text" v-on:input="changeTitle">
+	<p>{{title}}</p>
+		<button v-on:click="increase">Click me!</button>
+			<p>{{ counter }}</p>
+</div>
+	
+<script>
+	new Vue ({
+		el: '#app', 
+		data: {
+	  		title: 'Hey there!',
+	  		counter: 0
+	  		},
+	  	methods:{
+	  	changeTitle: function(event){
+	    	this.title = event.target.value;
+	    },
+	    increase: function(event){
+	    	this.counter++;
+
+	    }
+	  }
+	});
+</script>
+
+  
+  </body>
+</html>
