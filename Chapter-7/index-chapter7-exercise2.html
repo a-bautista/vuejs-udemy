@@ -1,0 +1,57 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <h1>
+      First app
+    </h1>
+    <my-component1></my-component1>  
+  </div>
+  
+  <hr />
+  
+  <div id="app2">
+  <h1>
+    Second app
+  </h1>
+    <my-component></my-component>
+  </div>
+
+<script>
+// vue component locally
+var vm = {
+	data: function() {
+  	return {
+    	status: 'Critical',
+      toggle: true
+    }
+  },
+  template: '<p>Server status: {{ status }} (<button @click="changeStatus">Change</button>)</p>',
+  methods:{
+  	changeStatus: function(){
+    	if (this.toggle){
+      	this.status = 'Normal';
+        this.toggle = false;
+      }else{
+      	this.status = 'Critical';
+        this.toggle = true;
+      }
+    }
+  }
+};
+
+//vue instance
+new Vue({
+	el: '#app',
+  components: {
+  	'my-component1': vm
+  }
+})
+
+new Vue({
+    el: '#app2'
+    //,
+    //components: {
+  	//'my-component2': vm
+  //}
+})
+
+</script>

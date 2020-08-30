@@ -1,0 +1,1 @@
+### This folder contains the lifecycle of a a Vue JS project and it also indicates how to start creating basic Vue components.

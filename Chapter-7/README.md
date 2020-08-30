@@ -1,0 +1,1 @@
+### This folder contains the basics of how to create Vue components and how to integrate them in a VueJS project.
