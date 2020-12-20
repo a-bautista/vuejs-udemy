@@ -1,0 +1,33 @@
+<template>
+    <div>
+        <div class="title">
+            <slot name="title"></slot>
+            <span style="color: #3c1"><slot name="subtitle">The Subtitle</slot></span>
+        </div>
+        <hr />
+        <div>
+            <slot name="default"></slot>
+        </div>      
+    </div>
+</template>
+
+<script></script>
+
+<style scoped>
+  div {
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px black;
+    padding:30px;
+    margin: 30px;
+    text-align: center;
+  }
+
+  h1 {
+      color: red;
+  }
+
+  .title {
+      font-style: italic;
+  }
+
+  </style>

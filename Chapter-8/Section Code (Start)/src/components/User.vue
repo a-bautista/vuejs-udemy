@@ -5,6 +5,7 @@
         <button @click="changeName">Change my name</button>
         <hr>
         
+        
         <div class="row">
             <div class="col-xs-12 col-sm-6">
                 <app-user-detail 
@@ -12,7 +13,7 @@
                 v-bind:userAge="age"
                 @nameWasReset="name = $event">
                 <!-- 1. myName is the name of the props which passes the 
-                    name to the User Detail child.
+                     name to the User Detail child.
                      2. nameReset is an custom event listener
                      that receives the notification from the child user Detail.
                      Props and custom events & Props and callbacks are 
@@ -25,12 +26,11 @@
                 v-bind:userAge="age"
                 @ageWasEdited="age =$event">
                 <!-- 1. userAge is the props name which passes the age 
-                    User Edit child.
+                     User Edit child.
                      2. ageWasEdited is an custom event listener
                      that receives the notification from the child UserEdit and 
                      indicates to the other child UserDetail to do the changes.
                 -->
-
                 </app-user-edit>
             </div>
         </div>

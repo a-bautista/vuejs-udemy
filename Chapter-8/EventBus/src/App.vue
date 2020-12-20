@@ -2,18 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <app-user></app-user>
+                <main-container-app></main-container-app>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import User from './components/User.vue';
+    import MainContainer from './components/MainContainer.vue';
 
     export default {
         components: {
-            appUser: User
+            mainContainerApp: MainContainer
         }
     }
 </script>

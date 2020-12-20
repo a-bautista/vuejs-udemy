@@ -1,9 +1,11 @@
 <template>
     <div class="component">
-        <h1>The User Component</h1>
-        <p>I'm an awesome User ({{ name }})</p>
+        <app-user-main 
+        v-bind:userAge="age"
+        v-bind:userName="name">
+        
+        </app-user-main>
         <button @click="changeName">Change my name</button>
-        <p>Age: {{age}}</p>
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
@@ -40,6 +42,8 @@
 <script>
     import UserDetail from './UserDetail.vue';
     import UserEdit from './UserEdit.vue';
+    import UserMain from './UserMain.vue';
+    
 
     export default {
         data: function(){
@@ -55,13 +59,14 @@
         },
         components: {
             appUserDetail: UserDetail,
-            appUserEdit: UserEdit
+            appUserEdit: UserEdit,
+            appUserMain: UserMain
         }
     }
 </script>
 
 <style scoped>
     div {
-        background-color: lightblue;
+        background-color: blueviolet;
     }
 </style>
