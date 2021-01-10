@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <p v-if="show">You can see me.</p>
+      <p v-else>
+        else condition in action
+      </p>
+      <p>
+        You can see me again.
+      </p>
+      <template v-if="show"><!-- multiple elements are here -->
+        <h1>
+          Heading
+        </h1>
+        <p>
+          another paragraph
+        </p>
+      </template>
+      <button @click="show =!show">
+        Switch
+      </button>
+    </div>
+	
+    <script>
+        new Vue({
+          el: '#app',
+          data:{
+            show:false
+          }
+        });
+    </script>
+</body>
+</html>
