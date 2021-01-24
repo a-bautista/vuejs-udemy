@@ -1,7 +1,6 @@
 <template>
     <div>
         <header>Main App</header>
-            
             <active-user :username="user.name" :userage="user.age"></active-user>
             <user-data @user-data="setUserData"></user-data>
     </div>
