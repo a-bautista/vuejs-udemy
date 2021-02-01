@@ -80,7 +80,7 @@ const coachesModule = {
       },
 
       async login(context, payload){
-        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCW3knM7sS-tu25mnWO-mswM_bDeNAlD84',{
+        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',{
           method: 'POST',
           body: JSON.stringify({
             email: payload.email,
@@ -118,7 +118,7 @@ const coachesModule = {
 
       async signup(context, payload){
         //console.log(payload);
-        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCW3knM7sS-tu25mnWO-mswM_bDeNAlD84',{
+        const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=',{
           method: 'POST',
           body: JSON.stringify({
             email: payload.email,
