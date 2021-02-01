@@ -1,8 +1,6 @@
 <template>
   <the-navigation></the-navigation>
-  <main>
     <router-view></router-view><!--default name without any name-->
-  </main>
   <footer>
     <router-view name="footer"></router-view>
   </footer>

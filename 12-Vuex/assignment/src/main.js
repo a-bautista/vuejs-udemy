@@ -8,6 +8,7 @@ const app = createApp(App)
 
 app.use(router);
 app.use(store);
+
 app.component('base-badge', BaseBadge);
 
 app.mount('#app');
