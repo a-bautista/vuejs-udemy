@@ -1,6 +1,7 @@
 <template>
   <div class="app">
-    <p> {{ jobs[0].location }} </p>
+    <JobList :jobs="jobs" />
+    <!-- <p> {{ jobs[0].location }} </p> -->
     <!-- <button @click="changeName('Emily')">Change the name</button>
     <button @click="changeAge(25)">Change the age</button> -->
   </div>
@@ -9,10 +10,11 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import Job from './types/Job';
+import JobList from './components/JobsList.vue';
 
 export default defineComponent({
   name: 'App',
-  components: {},
+  components: {JobList},
   setup() {
     const jobs = ref<Job[]>([
       { title: "Farmer", location: "Lon Lon Ranch", salary: 3000, id: '1' },
